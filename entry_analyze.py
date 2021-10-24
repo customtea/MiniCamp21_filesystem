@@ -60,7 +60,7 @@ class Entry:
         self.lfn_name3 = ""
 
         dat = datum32B.replace(" ","")
-        barray: bytearray = []
+        barray: bytearray
         for i in range(0,64,2):
             #print(dat[i:i+2])
             barray.append(int(dat[i:i+2],16))
@@ -209,24 +209,15 @@ def main(d) -> None:
     print(a)
 
 def main_set() -> None:
-    d = "4170 0069 006e 0065 002e 000f 00ad 7400 7800 7400 0000 ffff ffff 0000 ffff ffff"
-    a = Entry(d)
-    a.print_entry()
-    d = "5049 4e45 2020 2020 5458 5420 001d 72a0 1053 1053 0000 72a0 1053 0500 0900 0000"
-    a = Entry(d)
-    a.print_entry()
-    d = "4177 006f 0072 0064 002e 000f 00f2 7400 7800 7400 0000 ffff ffff 0000 ffff ffff"
-    a = Entry(d)
-    a.print_entry()
-    d = "574f 5244 2020 2020 5458 5420 0097 25a0 1053 1053 0000 25a0 1053 0600 0900 0000"
-    a = Entry(d)
-    a.print_entry()
-    d = "e573 0065 0063 002e 0074 000f 0077 7800 7400 0000 ffff ffff ffff 0000 ffff ffff"
-    a = Entry(d)
-    a.print_entry()
-    d = "e545 4320 2020 2020 5458 5420 002d 28a0 1053 1053 0000 28a0 1053 0700 0500 0000"
-    a = Entry(d)
-    a.print_entry()
+    entries = [
+    "4170 0069 006e 0065 002e 000f 00ad 7400 7800 7400 0000 ffff ffff 0000 ffff ffff",
+    "5049 4e45 2020 2020 5458 5420 001d 72a0 1053 1053 0000 72a0 1053 0500 0900 0000",
+    "4177 006f 0072 0064 002e 000f 00f2 7400 7800 7400 0000 ffff ffff 0000 ffff ffff",
+    "574f 5244 2020 2020 5458 5420 0097 25a0 1053 1053 0000 25a0 1053 0600 0900 0000",
+    "e573 0065 0063 002e 0074 000f 0077 7800 7400 0000 ffff ffff ffff 0000 ffff ffff",
+    "e545 4320 2020 2020 5458 5420 002d 28a0 1053 1053 0000 28a0 1053 0700 0500 0000"
+
+    ]
 
 
 if __name__ == '__main__':
